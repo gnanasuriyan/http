@@ -139,6 +139,7 @@ export interface HttpCookieOptions {
   url?: string;
   path?: string;
   expires?: string;
+  domain?: string;
 }
 
 export interface HttpSingleCookieOptions {

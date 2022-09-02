@@ -21,7 +21,10 @@ export const setCookie = (
     'expires=',
     '',
   )}`; // Default is "; expires="
-  const path = (options.path || '/').replace('path=', ''); // Default is "path=/"
+  let path = (options.path || '/').replace('path=', ''); // Default is "path=/"
+  if (options.domain) {
+    path = `${path};domain=${options.domain}`;
+  }
 
   document.cookie = `${encodedKey}=${
     encodedValue || ''
